@@ -21,6 +21,7 @@ your task:
 
     2) HighwayPatrol can check the speed of vehicles on the highway. 
         make this happen without adding getters to the Highway or Vehicle class
+        I think this is done
 
     3) implement the Highway::addVehicleInternal 
         this function should call the non-evasive member function of the derived class, so use the technique shown in the Casting video.
@@ -118,7 +119,7 @@ int main()
     
     
     
-    assert(false);
+    // assert(false);
     //add the cars, motorcycles and trucks to the highway using range-based for() loops: for( element : vec ) { ... }
     //be careful to not accidentally make element copies when iterating.
     
