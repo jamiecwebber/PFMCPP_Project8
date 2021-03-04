@@ -17,6 +17,7 @@ your task:
     0) get familiar with the classes. 
 
     1) Fix the include errors. 
+        done
 
     2) HighwayPatrol can check the speed of vehicles on the highway. 
         make this happen without adding getters to the Highway or Vehicle class
@@ -52,13 +53,20 @@ send me a DM to check your pull request
 #include <algorithm>
 #include <cassert>
 
+#include "Car.h"
+#include "Highway.h"
+#include "HighwayPatrol.h"
+#include "Motorcycle.h"
+#include "SemiTruck.h"
+#include "Vehicle.h"
+
 int main()
 {
     Highway highway;
     
     std::vector<Car> cars;
     std::vector<Motorcycle> motorcycles;
-    std::vector<SemiTruck> trucks;
+    // std::vector<SemiTruck> trucks;
     
     /*
      instantiating vectors like this creates unexpected copies during the construction process:
