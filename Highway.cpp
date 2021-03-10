@@ -26,7 +26,7 @@ void Highway::addVehicleInternal(Vehicle* v)
 
     if (Motorcycle* mc = dynamic_cast<Motorcycle*>(v))
     {
-        mc->setSpeed(speedLimit);
+        mc->lanesplitAndRace();
     }
 
     if (SemiTruck* st = dynamic_cast<SemiTruck*>(v))
