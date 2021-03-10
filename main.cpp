@@ -25,6 +25,7 @@ your task:
 
     3) implement the Highway::addVehicleInternal 
         this function should call the non-evasive member function of the derived class, so use the technique shown in the Casting video.
+        looking at this now
 
     4) implement the Highway::removeVehicleInternal
         this function should call the evasive member function of the derived class, if it has one. use the technique shown in the Casting video.
@@ -36,7 +37,7 @@ your task:
     done 
 
     7) Add some Motorcycles to the Highway
-    doing
+    done
 
     8) Add some SemiTrucks to the highway. 
 
@@ -123,7 +124,10 @@ int main()
      now reserve and emplace_back your Trucks and Motorcyles
      */
     
-    
+    motorcycles.reserve(3);
+    motorcycles.emplace_back("russell");
+    motorcycles.emplace_back("robert");
+    motorcycles.emplace_back("rhonda");
     
     
     // assert(false);
@@ -131,6 +135,11 @@ int main()
     for ( Car& car : cars )
     {
         highway.addVehicle(&car);
+    }
+
+    for ( Motorcycle& motorcycle : motorcycles )
+    {
+        highway.addVehicle(&motorcycle);
     }
 
     //be careful to not accidentally make element copies when iterating.
