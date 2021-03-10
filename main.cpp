@@ -72,7 +72,7 @@ int main()
     
     std::vector<Car> cars;
     std::vector<Motorcycle> motorcycles;
-    // std::vector<SemiTruck> trucks;
+    std::vector<SemiTruck> trucks;
     
     /*
      instantiating vectors like this creates unexpected copies during the construction process:
@@ -128,6 +128,10 @@ int main()
     motorcycles.emplace_back("russell");
     motorcycles.emplace_back("robert");
     motorcycles.emplace_back("rhonda");
+
+    trucks.reserve(2);
+    trucks.emplace_back("brienne");
+    trucks.emplace_back("brian");
     
     
     // assert(false);
@@ -140,6 +144,11 @@ int main()
     for ( Motorcycle& motorcycle : motorcycles )
     {
         highway.addVehicle(&motorcycle);
+    }
+
+    for ( SemiTruck& truck : trucks )
+    {
+        highway.addVehicle(&truck);
     }
 
     //be careful to not accidentally make element copies when iterating.

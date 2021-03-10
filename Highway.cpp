@@ -2,7 +2,7 @@
 
 #include "Car.h"
 #include "Motorcycle.h"
-// #include "SemiTruck.h"
+#include "SemiTruck.h"
 
 #include <cassert>
 
@@ -28,6 +28,11 @@ void Highway::addVehicleInternal(Vehicle* v)
     {
         mc->setSpeed(speedLimit);
     }
+
+    if (SemiTruck* st = dynamic_cast<SemiTruck*>(v))
+    {
+        st->speedUp();
+    }
     /*
     depending on the derived type, call the member function that doesn't evade the cops. 
     */
@@ -44,6 +49,11 @@ void Highway::removeVehicleInternal(Vehicle* v)
     if (Motorcycle* mc = dynamic_cast<Motorcycle*>(v))
     {
         mc->tryToEvade();
+    }
+
+    if (SemiTruck* st = dynamic_cast<SemiTruck*>(v))
+    {
+        st->tryToEvade(); // this is overridden
     }
     /*
     depending on the derived type, call the member function that tries to evade the cops. 
