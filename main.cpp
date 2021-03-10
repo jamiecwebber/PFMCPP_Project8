@@ -33,7 +33,11 @@ your task:
         semi-trucks don't evade when they're pulled over, unlike cars and motorcycles.  
 
     6) Add some Cars to the Highway
+    done 
+
     7) Add some Motorcycles to the Highway
+    doing
+
     8) Add some SemiTrucks to the highway. 
 
     9) clear any warnings as best you can, based on what you've learned in the previous projects
@@ -111,6 +115,9 @@ int main()
     /*
      construct 2 more Car instances via emplace_back.
      */
+
+    cars.emplace_back("rupert");
+    cars.emplace_back("charles");
     
     /*
      now reserve and emplace_back your Trucks and Motorcyles
@@ -121,6 +128,11 @@ int main()
     
     // assert(false);
     //add the cars, motorcycles and trucks to the highway using range-based for() loops: for( element : vec ) { ... }
+    for ( Car& car : cars )
+    {
+        highway.addVehicle(&car);
+    }
+
     //be careful to not accidentally make element copies when iterating.
     
     HighwayPatrol cop;
