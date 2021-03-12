@@ -3,9 +3,12 @@
 #include <iostream>
 #include <limits>
 
-struct Motorcycle : public Vehicle
+#include "Vehicle.h"
+
+struct Motorcycle : Vehicle
 {
     Motorcycle(const std::string& n);
+    // ~Motorcycle() override {}
     
     void lanesplitAndRace( int topSpeed = std::numeric_limits<int>::max() );
     

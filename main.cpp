@@ -17,12 +17,15 @@ your task:
     0) get familiar with the classes. 
 
     1) Fix the include errors. 
+        done
 
     2) HighwayPatrol can check the speed of vehicles on the highway. 
         make this happen without adding getters to the Highway or Vehicle class
+        I think this is done
 
     3) implement the Highway::addVehicleInternal 
         this function should call the non-evasive member function of the derived class, so use the technique shown in the Casting video.
+        looking at this now
 
     4) implement the Highway::removeVehicleInternal
         this function should call the evasive member function of the derived class, if it has one. use the technique shown in the Casting video.
@@ -32,7 +35,11 @@ your task:
         They'll also need a member function that can be called when they are added to the highway.  Look at the Highway member functions for more hints on this.
 
     6) Add some Cars to the Highway
+    done 
+
     7) Add some Motorcycles to the Highway
+    done
+
     8) Add some SemiTrucks to the highway. 
 
     9) clear any warnings as best you can, based on what you've learned in the previous projects
@@ -58,6 +65,13 @@ your task:
 
  Wait for my code review.
  */
+
+#include "Car.h"
+#include "Highway.h"
+#include "HighwayPatrol.h"
+#include "Motorcycle.h"
+#include "SemiTruck.h"
+#include "Vehicle.h"
 
 int main()
 {
@@ -109,16 +123,41 @@ int main()
     /*
      construct 2 more Car instances via emplace_back.
      */
+
+    cars.emplace_back("rupert");
+    cars.emplace_back("charles");
     
     /*
      now reserve and emplace_back your Trucks and Motorcyles
      */
     
+    motorcycles.reserve(3);
+    motorcycles.emplace_back("russell");
+    motorcycles.emplace_back("robert");
+    motorcycles.emplace_back("rhonda");
+
+    trucks.reserve(2);
+    trucks.emplace_back("brienne");
+    trucks.emplace_back("brian");
     
     
-    
-    assert(false);
+    // assert(false);
     //add the cars, motorcycles and trucks to the highway using range-based for() loops: for( element : vec ) { ... }
+    for ( Car& car : cars )
+    {
+        highway.addVehicle(&car);
+    }
+
+    for ( Motorcycle& motorcycle : motorcycles )
+    {
+        highway.addVehicle(&motorcycle);
+    }
+
+    for ( SemiTruck& truck : trucks )
+    {
+        highway.addVehicle(&truck);
+    }
+
     //be careful to not accidentally make element copies when iterating.
     
     HighwayPatrol cop;
