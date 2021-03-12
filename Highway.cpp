@@ -23,13 +23,11 @@ void Highway::addVehicleInternal(Vehicle* v)
         // car->setSpeed(speedLimit);
         car->closeWindows();
     }
-
-    if (Motorcycle* mc = dynamic_cast<Motorcycle*>(v))
+    else if (Motorcycle* mc = dynamic_cast<Motorcycle*>(v))
     {
         mc->lanesplitAndRace();
     }
-
-    if (SemiTruck* st = dynamic_cast<SemiTruck*>(v))
+    else if (SemiTruck* st = dynamic_cast<SemiTruck*>(v))
     {
         st->speedUp();
     }
@@ -45,13 +43,11 @@ void Highway::removeVehicleInternal(Vehicle* v)
     {
         car->tryToEvade();
     }
-
-    if (Motorcycle* mc = dynamic_cast<Motorcycle*>(v))
+    else if (Motorcycle* mc = dynamic_cast<Motorcycle*>(v))
     {
         mc->tryToEvade();
     }
-
-    if (SemiTruck* st = dynamic_cast<SemiTruck*>(v))
+    else if (SemiTruck* st = dynamic_cast<SemiTruck*>(v))
     {
         st->tryToEvade(); // this is overridden
     }

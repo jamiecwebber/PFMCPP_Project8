@@ -1,11 +1,6 @@
 
+#include <iostream>
 #include "Vehicle.h"
-
-// Vehicle::Vehicle(const std::string& n) : name(n) { }
-    
-Vehicle::~Vehicle() = default;
-Vehicle::Vehicle(const Vehicle&) = default;
-// Vehicle& operator= (const Vehicle&);
     
 void Vehicle::setSpeed(int s)
 {

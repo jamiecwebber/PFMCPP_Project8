@@ -7,7 +7,7 @@ Car::Car(const std::string& n) : Vehicle(n) {}
 
 void Car::closeWindows()
 {
-    setSpeed(100);
+    setSpeed(70);
     std::cout << name << ": closing the windows!" << std::endl;
 }
 
