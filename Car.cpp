@@ -3,7 +3,6 @@
 #include <iostream>
 
 Car::Car(const std::string& n) : Vehicle(n) {}
-// Car::Car(Car const&) : Vehicle() {}
 
 void Car::closeWindows()
 {
